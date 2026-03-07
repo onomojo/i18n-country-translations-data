@@ -1,0 +1,17 @@
+{
+  "name": "i18n-country-translations-data",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Localized country name translations in 168 locales (CLDR-sourced)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onomojo/i18n-country-translations-data.git"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.js"
+  },
+  "dependencies": {
+    "yaml": "^2.8.2"
+  }
+}
