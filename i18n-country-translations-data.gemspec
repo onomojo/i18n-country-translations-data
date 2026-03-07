@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "i18n-country-translations-data"
-  s.version     = "1.0.0"
+  s.version     = File.read(File.expand_path("VERSION", __dir__)).strip
   s.summary     = "Localized country name translations in 168 locales"
   s.description = "CLDR-sourced country name translations for 257 territory codes across 168 locales. Flat YAML data files for use by i18n-country-translations and other consumers."
   s.authors     = ["Brian McQuay"]
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 3.1"
 
-  s.files = Dir["lib/**/*", "data/*.yml", "README.md", "LICENSE"]
+  s.files = Dir["lib/**/*", "data/*.yml", "VERSION", "README.md", "LICENSE"]
   s.require_paths = ["lib"]
 
   s.metadata = {
