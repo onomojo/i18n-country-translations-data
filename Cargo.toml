@@ -1,0 +1,9 @@
+[package]
+name = "i18n-country-translations-data"
+version = "0.1.0"
+edition = "2021"
+description = "CLDR-sourced country name translations for 257 territory codes across 168 locales (data crate)"
+license = "MIT"
+repository = "https://github.com/onomojo/i18n-country-translations-data"
+keywords = ["i18n", "country", "translation", "localization", "cldr"]
+categories = ["internationalization", "localization"]
