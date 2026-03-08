@@ -1,14 +1,15 @@
 # i18n-country-translations-data
 
-> Localized country name translations in 168 locales — CLDR-sourced, framework-agnostic YAML.
+> Localized country name translations in 168 locales — CLDR-sourced, framework-agnostic JSON.
 
-This repository contains the canonical translation data for country and territory names, covering **257 ISO 3166-1 alpha-2 codes** across **168 locales**. The data is sourced from the [Unicode CLDR](https://cldr.unicode.org/) and stored as flat, human-readable YAML — easy to consume from any language or framework.
+This repository contains the canonical translation data for country and territory names, covering **257 ISO 3166-1 alpha-2 codes** across **168 locales**. The data is sourced from the [Unicode CLDR](https://cldr.unicode.org/) and stored as flat, human-readable JSON — easy to consume from any language or framework.
 
 ## Who is this for?
 
-- **Library authors** building country/locale tools in any language (Python, PHP, Go, etc.)
+- **Library authors** building country/locale tools in any language (Python, PHP, Go, Rust, etc.)
 - **Ruby developers** using the [i18n-country-translations](https://github.com/onomojo/i18n-country-translations) gem
 - **JavaScript developers** — see the ready-to-use NPM package: [i18n-country-translations](https://github.com/onomojo/i18n-country-translations-js)
+- **Go developers** — import as a Go module with embedded data
 - **Anyone** who needs accurate country names in languages beyond the typical 30-50 that most libraries support
 
 ## Why 168 locales?
@@ -19,18 +20,18 @@ This dataset doesn't cut corners. If CLDR has the data, it's here.
 
 ## Data Format
 
-Each locale is a single YAML file with flat key-value pairs — no nesting, no complex structure:
+Each locale is a single JSON file with flat key-value pairs — no nesting, no complex structure:
 
-```yaml
-# data/de.yml
-"US": "Vereinigte Staaten"
-"GB": "Vereinigtes Königreich"
-"DE": "Deutschland"
-"JP": "Japan"
-"NO": "Norwegen"
+```json
+// data/de.json
+{
+  "US": "Vereinigte Staaten",
+  "GB": "Vereinigtes Königreich",
+  "DE": "Deutschland",
+  "JP": "Japan",
+  "NO": "Norwegen"
+}
 ```
-
-All keys are quoted to prevent YAML boolean coercion (the country code `NO` would otherwise parse as `false`).
 
 ## Coverage
 
@@ -48,21 +49,20 @@ af, ak, am, ar, as, az, be, bg, bm, bn, bo, br, bs, ca, cs, cy, da, de, dz, ee, 
 
 ```
 data/
-  en.yml              # English (reference locale)
-  de.yml              # German
-  ja.yml              # Japanese
-  zh-TW.yml           # Traditional Chinese
+  en.json             # English (reference locale)
+  de.json             # German
+  ja.json             # Japanese
+  zh-TW.json          # Traditional Chinese
   ...                 # 168 locale files total
 scripts/
-  flatten-yaml.js     # Import from Ruby gem's nested YAML format
   validate.js         # Validate consistency across all locale files
+data.go               # Go embed directive
+go.mod                # Go module definition
 ```
 
 ## Validation
 
 Every locale file is validated to ensure:
-- No YAML boolean coercion (keys like `NO` aren't parsed as `false`)
-- No boolean values in the data
 - No empty or null values
 - Reasonable key count per file
 
@@ -71,6 +71,24 @@ npm run validate
 # Validated 168 locale files (en has 258 keys)
 # ✓ No critical errors
 ```
+
+## Usage
+
+### Go
+
+```go
+import data "github.com/onomojo/i18n-country-translations-data"
+
+// data.FS is an embed.FS containing data/*.json
+```
+
+### Ruby
+
+Available as a gem: `gem install i18n-country-translations-data`
+
+### Node.js
+
+Available as an npm package or via the higher-level [i18n-country-translations](https://github.com/onomojo/i18n-country-translations-js) package.
 
 ## Data Source
 
