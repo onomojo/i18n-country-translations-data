@@ -9,7 +9,8 @@ This repository contains the canonical translation data for country and territor
 - **Library authors** building country/locale tools in any language (Python, PHP, Go, Rust, etc.)
 - **Ruby developers** using the [i18n-country-translations](https://github.com/onomojo/i18n-country-translations) gem
 - **JavaScript developers** — see the ready-to-use NPM package: [i18n-country-translations](https://github.com/onomojo/i18n-country-translations-js)
-- **Go developers** — import as a Go module with embedded data
+- **Go developers** — import as a Go module with embedded data via [i18n-country-translations-go](https://github.com/onomojo/i18n-country-translations-go)
+- **Rust developers** — available as a crate: [i18n-country-translations](https://crates.io/crates/i18n-country-translations) ([repo](https://github.com/onomojo/i18n-country-translations-rs))
 - **Anyone** who needs accurate country names in languages beyond the typical 30-50 that most libraries support
 
 ## Why 168 locales?
@@ -86,6 +87,16 @@ import data "github.com/onomojo/i18n-country-translations-data"
 
 Available as a gem: `gem install i18n-country-translations-data`
 
+### Rust
+
+Available as a crate on [crates.io](https://crates.io/crates/i18n-country-translations):
+
+```toml
+# Cargo.toml
+[dependencies]
+i18n-country-translations = "*"
+```
+
 ### Node.js
 
 Available as an npm package or via the higher-level [i18n-country-translations](https://github.com/onomojo/i18n-country-translations-js) package.
@@ -98,6 +109,8 @@ All translations come from the [Unicode CLDR](https://cldr.unicode.org/) (Common
 
 - **[i18n-country-translations (NPM)](https://github.com/onomojo/i18n-country-translations-js)** — Ready-to-use JavaScript/TypeScript package built from this data
 - **[i18n-country-translations (Ruby)](https://github.com/onomojo/i18n-country-translations)** — Rails gem for country translations
+- **[i18n-country-translations (Go)](https://github.com/onomojo/i18n-country-translations-go)** — Go module for country translations
+- **[i18n-country-translations (Rust)](https://github.com/onomojo/i18n-country-translations-rs)** — Rust crate for country translations ([crates.io](https://crates.io/crates/i18n-country-translations))
 - **[i18n-timezones-data](https://github.com/onomojo/i18n-timezones-data)** — Timezone name translations (36 locales)
 
 ## License
