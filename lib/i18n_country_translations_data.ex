@@ -7,9 +7,6 @@ defmodule I18nCountryTranslationsData do
   Returns the absolute path to the data directory containing locale JSON files.
   """
   def data_dir do
-    :i18n_country_translations_data
-    |> :code.lib_dir()
-    |> to_string()
-    |> Path.join("data")
+    Path.expand("../data", __DIR__)
   end
 end
