@@ -11,7 +11,7 @@ defmodule I18nCountryTranslationsData.MixProject do
       start_permanent: Mix.env() == :prod,
       description: "CLDR-sourced country name translations for 257 territory codes across 168 locales (data package)",
       package: package(),
-      deps: []
+      deps: [{:ex_doc, "~> 0.31", only: :dev, runtime: false}]
     ]
   end
 
