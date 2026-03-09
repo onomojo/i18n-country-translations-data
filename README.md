@@ -11,6 +11,7 @@ This repository contains the canonical translation data for country and territor
 - **JavaScript developers** — see the ready-to-use NPM package: [i18n-country-translations](https://github.com/onomojo/i18n-country-translations-js)
 - **Go developers** — import as a Go module with embedded data via [i18n-country-translations-go](https://github.com/onomojo/i18n-country-translations-go)
 - **Rust developers** — available as a crate: [i18n-country-translations](https://crates.io/crates/i18n-country-translations) ([repo](https://github.com/onomojo/i18n-country-translations-rs))
+- **Elixir developers** — available on hex.pm: [i18n_country_translations](https://hex.pm/packages/i18n_country_translations) ([repo](https://github.com/onomojo/i18n-country-translations-ex))
 - **Anyone** who needs accurate country names in languages beyond the typical 30-50 that most libraries support
 
 ## Why 168 locales?
@@ -101,6 +102,15 @@ i18n-country-translations = "*"
 
 Available as an npm package or via the higher-level [i18n-country-translations](https://github.com/onomojo/i18n-country-translations-js) package.
 
+### Elixir
+
+Available on [hex.pm](https://hex.pm/packages/i18n_country_translations):
+
+```elixir
+# mix.exs
+{:i18n_country_translations, "~> 0.1"}
+```
+
 ## Data Source
 
 All translations come from the [Unicode CLDR](https://cldr.unicode.org/) (Common Locale Data Repository) — the industry-standard source used by every major platform including iOS, Android, Chrome, and Java. This ensures translations are accurate, consistent, and maintained by native speakers through Unicode's established review process.
@@ -111,6 +121,7 @@ All translations come from the [Unicode CLDR](https://cldr.unicode.org/) (Common
 - **[i18n-country-translations (Ruby)](https://github.com/onomojo/i18n-country-translations)** — Rails gem for country translations
 - **[i18n-country-translations (Go)](https://github.com/onomojo/i18n-country-translations-go)** — Go module for country translations
 - **[i18n-country-translations (Rust)](https://github.com/onomojo/i18n-country-translations-rs)** — Rust crate for country translations ([crates.io](https://crates.io/crates/i18n-country-translations))
+- **[i18n-country-translations (Elixir)](https://github.com/onomojo/i18n-country-translations-ex)** — Elixir package for country translations ([hex.pm](https://hex.pm/packages/i18n_country_translations))
 - **[i18n-timezones-data](https://github.com/onomojo/i18n-timezones-data)** — Timezone name translations (36 locales)
 
 ## License
